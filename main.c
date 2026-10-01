@@ -2,28 +2,31 @@
 
 int main(void)
 {
-    int a, b;
-    char op;
+    int answer = 59;
+    int number;
+    int count = 0;
 
-    printf("input expression :");
-    scanf("%d %c %d", &a, &op, &b);
+    do
+    {
+        printf("input a number :");
+        scanf("%d", &number);
 
-    if (op == '+')
-    {
-        printf("%d+%d=%d\n", a, b, a + b);
-    }
-    else if (op == '-')
-    {
-        printf("%d-%d=%d\n", a, b, a - b);
-    }
-    else if (op == '*')
-    {
-        printf("%d*%d=%d\n", a, b, a * b);
-    }
-    else if (op == '/')
-    {
-        printf("%d/%d=%d\n", a, b, a / b);
-    }
+        count++;
+
+        if (number < answer)
+        {
+            printf("higher\n");
+        }
+        else if (number > answer)
+        {
+            printf("lower\n");
+        }
+        else
+        {
+            printf("correct! %d attempts\n", count);
+        }
+
+    } while (number != answer);
 
     return 0;
 }
